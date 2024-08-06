@@ -1,11 +1,11 @@
-package javabasedconfiguration;
+package dependencyinjection;
 
 import org.example.AccountService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class MainTestConfig {
+public class MainTestSetter {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanCofiguration.class);
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationbasedconfiguration/beans.xml");
         AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
         System.out.println("Before money transfer");
         System.out.println("Account 1 balance :" + accountService.getAccount(1).getBalance());
@@ -16,6 +16,6 @@ public class MainTestConfig {
         System.out.println("After money transfer");
         System.out.println("Account 1 balance :" + accountService.getAccount(1).getBalance());
         System.out.println("Account 2 balance :" + accountService.getAccount(2).getBalance());
+
     }
 }
-

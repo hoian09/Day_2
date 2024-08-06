@@ -1,9 +1,10 @@
-package javabasedconfiguration;
+package dependencyinjection;
 
+import javabasedconfiguration.BeanCofiguration;
 import org.example.AccountService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class MainTestConfig {
+public class MainTestConstructor {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanCofiguration.class);
         AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
@@ -18,4 +19,3 @@ public class MainTestConfig {
         System.out.println("Account 2 balance :" + accountService.getAccount(2).getBalance());
     }
 }
-

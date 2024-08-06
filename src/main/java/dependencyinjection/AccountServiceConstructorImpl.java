@@ -1,8 +1,15 @@
-package org.example;
+package dependencyinjection;
 
-public class AccountServiceImpl implements AccountService{
-    private AccountRepository accountRepository;
-    public void setAccountRepository(AccountRepository accountRepository) {
+import org.example.Account;
+import org.example.AccountRepository;
+import org.example.AccountService;
+import org.springframework.stereotype.Service;
+
+
+    @Service("accountService")
+   public class AccountServiceConstructorImpl implements AccountService {
+        private AccountRepository accountRepository;
+    public void AccountServiceConstructorImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
     @Override
@@ -25,3 +32,4 @@ public class AccountServiceImpl implements AccountService{
         return accountRepository.find(accountId);
     }
 }
+
