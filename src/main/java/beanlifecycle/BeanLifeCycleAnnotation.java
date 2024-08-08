@@ -18,4 +18,5 @@ public class BeanLifeCycleAnnotation {
     public void doAnything() {
         System.out.println("doSomething method is called");
     }
+
 }
