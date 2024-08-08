@@ -8,4 +8,5 @@ public class BeanLifeCycle {
     public void destroy() {
         System.out.println("destroy method is called");
     }
+
 }

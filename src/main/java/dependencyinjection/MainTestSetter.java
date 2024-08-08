@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainTestSetter {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotationbasedconfiguration/beans.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("dependencyinjection/beans-setter.xml");
         AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
         System.out.println("Before money transfer");
         System.out.println("Account 1 balance :" + accountService.getAccount(1).getBalance());

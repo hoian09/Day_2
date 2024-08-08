@@ -3,10 +3,8 @@ package dependencyinjection;
 import org.example.Account;
 import org.example.AccountRepository;
 import org.example.AccountService;
-import org.springframework.stereotype.Service;
 
 
-    @Service("accountService")
    public class AccountServiceConstructorImpl implements AccountService {
         private AccountRepository accountRepository;
     public void AccountServiceConstructorImpl(AccountRepository accountRepository) {
